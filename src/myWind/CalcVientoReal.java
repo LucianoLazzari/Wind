@@ -17,11 +17,12 @@ public class CalcVientoReal {
         
         return Real;
 }
-    float angulo (float A, float Real, float Alpha){ 
+    float angulo (float A, float Real, float Alpha, float bSp){ 
         
         float Beta;
         
-        Beta = (float) (A*Math.sin(Alpha)/Real);
+        Beta = (float) Math.acos((float) ((A*Math.cos(Alpha)-bSp)/Real));
+       
         
         return Beta;
     }

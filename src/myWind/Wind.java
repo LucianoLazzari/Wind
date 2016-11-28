@@ -29,6 +29,7 @@ public class Wind extends javax.swing.JFrame {
 
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jPanel2 = new javax.swing.JPanel();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -44,6 +45,8 @@ public class Wind extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         direccionReal = new javax.swing.JLabel();
+        estribor = new javax.swing.JRadioButton();
+        babor = new javax.swing.JRadioButton();
 
         jInternalFrame1.setVisible(true);
 
@@ -107,35 +110,56 @@ public class Wind extends javax.swing.JFrame {
 
         jLabel10.setText("Direccion  Real");
 
+        buttonGroup2.add(estribor);
+        estribor.setText("Estribor");
+        estribor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estriborActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(babor);
+        babor.setText("Babor");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(direccionAparente, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(vientoAparente)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(52, 52, 52)
-                        .addComponent(boatSpeed, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel4))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(vientoReal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(direccionReal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rumbo))))
+                            .addComponent(babor)
+                            .addComponent(estribor))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel4))
+                                .addGap(32, 32, 32)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(direccionReal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(vientoReal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1))
+                                .addGap(9, 9, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vientoAparente, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(direccionAparente, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel9))
+                                .addGap(52, 52, 52)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rumbo)
+                                    .addComponent(boatSpeed))))
+                        .addGap(92, 92, 92)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -149,7 +173,11 @@ public class Wind extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(direccionAparente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(estribor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(babor)
+                .addGap(19, 19, 19)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(boatSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -157,7 +185,7 @@ public class Wind extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(rumbo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(vientoReal, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -172,21 +200,19 @@ public class Wind extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(421, 421, 421)
-                .addComponent(jLabel5)
-                .addGap(0, 509, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(421, 421, 421)
+                        .addComponent(jLabel5))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 509, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel5)
                 .addContainerGap(97, Short.MAX_VALUE))
         );
@@ -205,32 +231,66 @@ public class Wind extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     CalcVientoReal calc = new CalcVientoReal();
-    float vAparente, bSpeed;
-    int dAparente, rmbo;
+    float vAparente, bSpeed, vReal, A, R, Alpha; 
+    int dAparente, dReal, rmbo;
+    boolean Ap, Alp, Ru, bSp=false;
+    String dap;
+    
+    private void showValues(){
+        vReal = calc.modulo(vAparente, bSpeed, Alpha);
+        dReal = (int) Math.toDegrees(calc.angulo(vAparente, vReal, Alpha,bSpeed));
+        if(babor.isSelected())dReal=360-dReal;
+         dReal=(dReal+rmbo)%360;
+        vientoReal.setText(Float.toString(vReal));
+        direccionReal.setText(Integer.toString(dReal));
+    }
     
     private void vientoAparenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vientoAparenteActionPerformed
         vAparente= Float.valueOf(vientoAparente.getText());
+        if(vAparente>=0 && vAparente<100 ) Ap=true; else Ap=false;
+          System.out.println("Ingreso = " + vAparente+" "+Ap+" "+Alp+" "+bSp+" "+Ru);
+        if(Ap && Alp && bSp && Ru == true){
+        showValues();
+        }
     }//GEN-LAST:event_vientoAparenteActionPerformed
 
     private void direccionAparenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionAparenteActionPerformed
        dAparente= Integer.valueOf(direccionAparente.getText());
+       Alpha = (float) Math.toRadians((double) dAparente);
+       if(dAparente>=0 && dAparente<=180 )Alp=true; else Alp=false;
+         System.out.println("Ingreso = " + dAparente+" "+Ap+" "+Alp+" "+bSp+" "+Ru);
+       if(Ap && Alp && bSp && Ru == true){
+        showValues();       }
     }//GEN-LAST:event_direccionAparenteActionPerformed
 
     private void boatSpeedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boatSpeedActionPerformed
         bSpeed = Float.valueOf(boatSpeed.getText());
+        if(bSpeed>=0 && bSpeed<50 )bSp=true; else bSp=false;
+          System.out.println("Ingreso = " + bSpeed+" "+Ap+" "+Alp+" "+bSp+" "+Ru);
+        if(Ap && Alp && bSp && Ru == true){
+       showValues();      }
     }//GEN-LAST:event_boatSpeedActionPerformed
 
     private void rumboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rumboActionPerformed
         rmbo= Integer.valueOf(rumbo.getText());
+       if(rmbo>=0 && rmbo<360 ) Ru=true; else Ru=false;
+         System.out.println("Ingreso = " + rmbo+" "+Ap+" "+Alp+" "+bSp+" "+Ru);
+        if(Ap && Alp && bSp && Ru == true){
+        showValues();      }
     }//GEN-LAST:event_rumboActionPerformed
 
+    private void estriborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estriborActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_estriborActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -268,9 +328,12 @@ public class Wind extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton babor;
     private javax.swing.JTextField boatSpeed;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JTextField direccionAparente;
     private javax.swing.JLabel direccionReal;
+    private javax.swing.JRadioButton estribor;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
